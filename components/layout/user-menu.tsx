@@ -32,6 +32,14 @@ export function UserMenu() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+
+    if (!url || !key) {
+      setLoading(false)
+      return
+    }
+
     const supabase = createClient()
 
     supabase.auth.getUser().then(({ data }) => {
