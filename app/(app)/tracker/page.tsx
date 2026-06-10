@@ -1,6 +1,6 @@
 import { Kanban } from "lucide-react"
 import { PageHeader } from "@/components/layout/page-header"
-import { TrackerBoard } from "@/components/tracker/tracker-board"
+import { TrackerWithStore } from "@/components/tracker/tracker-with-store"
 import { StatCard } from "@/components/cards"
 import { APP_USER } from "@/lib/constants/user"
 import { mockTrackerColumns } from "@/lib/mock-data"
@@ -65,7 +65,7 @@ export default function TrackerPage() {
           <Kanban className="size-5 text-muted-foreground" />
           <h2 className="text-lg font-semibold">Pipeline Board</h2>
         </div>
-        <TrackerBoard columns={mockTrackerColumns} />
+        <TrackerWithStore initialColumns={mockTrackerColumns} />
       </section>
     </div>
   )

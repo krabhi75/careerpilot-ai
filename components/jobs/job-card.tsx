@@ -1,4 +1,4 @@
-import { MapPin, Sparkles } from "lucide-react"
+import { MapPin } from "lucide-react"
 import { format, parseISO } from "date-fns"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { AutoApplyButton } from "@/components/jobs/auto-apply-button"
 import { PortalBadge } from "@/components/jobs/portal-badge"
 import type { Job } from "@/types"
 
@@ -76,10 +77,16 @@ export function JobCard({ job }: JobCardProps) {
         <span className="text-xs text-muted-foreground">
           Posted {format(parseISO(job.postedAt), "MMM d, yyyy")}
         </span>
-        <Button size="sm">
-          <Sparkles className="size-3.5" />
-          Apply
-        </Button>
+        <div className="flex gap-2">
+          <AutoApplyButton job={job} />
+          {job.externalUrl && (
+            <Button size="sm" variant="outline" asChild>
+              <a href={job.externalUrl} target="_blank" rel="noopener noreferrer">
+                View
+              </a>
+            </Button>
+          )}
+        </div>
       </CardFooter>
     </Card>
   )

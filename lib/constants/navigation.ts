@@ -6,28 +6,23 @@ import {
   Calendar,
   FileText,
   GraduationCap,
+  IndianRupee,
   Kanban,
   LayoutDashboard,
   Library,
   Settings,
   Users,
 } from "lucide-react"
-import { getTotalAggregatedJobs } from "@/lib/services/job-aggregator"
 import type { NavGroup } from "@/types"
 
-export const JOB_COUNT = getTotalAggregatedJobs()
+export const JOB_COUNT = "50+"
 
 export const mainNavigation: NavGroup[] = [
   {
     label: "Platform",
     items: [
       { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-      {
-        title: "Jobs Hub",
-        href: "/jobs",
-        icon: Briefcase,
-        badge: String(JOB_COUNT),
-      },
+      { title: "Jobs Hub", href: "/jobs", icon: Briefcase, badge: JOB_COUNT },
       { title: "Tracker", href: "/tracker", icon: Kanban },
       { title: "Analytics", href: "/analytics", icon: BarChart3 },
       { title: "Job Alerts", href: "/alerts", icon: Bell, badge: "3" },
@@ -38,7 +33,8 @@ export const mainNavigation: NavGroup[] = [
     label: "Grow",
     items: [
       { title: "Learning Material", href: "/learning", icon: GraduationCap },
-      { title: "Interviews", href: "/interviews", icon: Calendar, badge: "3" },
+      { title: "Interviews", href: "/interviews", icon: Calendar, badge: "AI" },
+      { title: "Salary Insights", href: "/salary", icon: IndianRupee },
       { title: "Recruiters", href: "/recruiters", icon: Users },
       { title: "Resources", href: "/resources", icon: Library },
     ],

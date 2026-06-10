@@ -4,18 +4,18 @@ import {
   Bot,
   Briefcase,
   GraduationCap,
+  IndianRupee,
   Kanban,
   Radar,
 } from "lucide-react"
 import { ActionCard } from "@/components/cards"
 import { InfoCard } from "@/components/cards"
 import { JOB_PORTALS } from "@/lib/constants/portals"
-import { getTotalAggregatedJobs } from "@/lib/services/job-aggregator"
 
 const modules = [
   {
     title: "Jobs Hub",
-    description: `Browse ${getTotalAggregatedJobs()} roles aggregated from ${JOB_PORTALS.length} portals.`,
+    description: `Browse 50+ roles from ${JOB_PORTALS.length} portals + live APIs.`,
     href: "/jobs",
     icon: Briefcase,
     cta: "Explore Jobs",
@@ -50,10 +50,24 @@ const modules = [
   },
   {
     title: "ATS & JD Tools",
-    description: "Scan resume for ATS, analyze and improve job description match.",
+    description: "PDF upload, ATS scan, JD match, and auto-apply.",
     href: "/ai-tools",
     icon: Bot,
     cta: "Open AI Tools",
+  },
+  {
+    title: "Salary Insights",
+    description: "Compensation benchmarks to negotiate better offers.",
+    href: "/salary",
+    icon: IndianRupee,
+    cta: "View Salaries",
+  },
+  {
+    title: "Mock Interviews",
+    description: "AI practice sessions with instant feedback.",
+    href: "/interviews",
+    icon: GraduationCap,
+    cta: "Start Practice",
   },
 ]
 

@@ -1,5 +1,6 @@
 import { ATSScanner } from "@/components/ai/ats-scanner"
 import { JDImprover } from "@/components/ai/jd-improver"
+import { ResumeUpload } from "@/components/ai/resume-upload"
 import { PageHeader } from "@/components/layout/page-header"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { APP_USER } from "@/lib/constants/user"
@@ -11,6 +12,8 @@ export default function AiToolsPage() {
         title="AI Career Tools"
         description={`ATS resume scanner and JD match improver — optimize every application for ${APP_USER.name}.`}
       />
+
+      <ResumeUpload />
 
       <Tabs defaultValue="ats">
         <TabsList>
