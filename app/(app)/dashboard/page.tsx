@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Bot, Briefcase, Sparkles } from "lucide-react"
 import { ActionCard } from "@/components/cards"
 import { ProgressCard } from "@/components/cards/progress-card"
@@ -8,6 +9,7 @@ import { RecentActivityFeed } from "@/components/dashboard/recent-activity"
 import { RecentApplications } from "@/components/dashboard/recent-applications"
 import { RecommendedJobs } from "@/components/dashboard/recommended-jobs"
 import { UpcomingInterviews } from "@/components/dashboard/upcoming-interviews"
+import { PlatformHub } from "@/components/platform/platform-hub"
 import { PageHeader } from "@/components/layout/page-header"
 import { Button } from "@/components/ui/button"
 import { APP_USER } from "@/lib/constants/user"
@@ -19,45 +21,51 @@ import {
   mockSkillProgress,
   mockUpcomingInterviews,
   mockWeeklyActivity,
-  getPortalJobs,
 } from "@/lib/mock-data"
+import { aggregateJobsFromAllPortals } from "@/lib/services/job-aggregator"
 
 export default function DashboardPage() {
+  const topJobs = aggregateJobsFromAllPortals().slice(0, 3)
+
   return (
     <div className="space-y-6">
       <PageHeader
         title="Dashboard"
-        description={`Track your job search progress and career growth, ${APP_USER.name}.`}
+        description={`Your single career platform — jobs, tracker, learning, analytics & AI tools for ${APP_USER.name}.`}
       >
-        <Button size="sm">
-          <Sparkles className="size-4" />
-          AI Career Insights
+        <Button size="sm" asChild>
+          <Link href="/ai-tools">
+            <Sparkles className="size-4" />
+            ATS & JD Tools
+          </Link>
         </Button>
       </PageHeader>
+
+      <PlatformHub />
 
       <KpiWidgets metrics={mockKpis} />
 
       <div className="grid gap-4 lg:grid-cols-3">
         <ActionCard
-          title="Optimize Resume"
-          description="Let AI improve your resume for higher match scores."
+          title="ATS Resume Scan"
+          description="Check resume compatibility before applying."
           href="/ai-tools"
           icon={Bot}
-          cta="Try AI Tools"
+          cta="Scan Resume"
         />
         <ActionCard
-          title="Browse Jobs"
-          description="Explore 24 new roles matched to your profile."
+          title="Jobs Hub"
+          description="All portals — LinkedIn, Naukri, Indeed & more."
           href="/jobs"
           icon={Briefcase}
-          cta="View Jobs"
+          cta="Browse Jobs"
         />
         <ActionCard
-          title="Interview Prep"
-          description="Practice with AI mock interviews before the real thing."
-          href="/interviews"
+          title="Career Analytics"
+          description="Track funnel, portals, and ATS score trends."
+          href="/analytics"
           icon={Sparkles}
-          cta="Start Prep"
+          cta="View Analytics"
         />
       </div>
 
@@ -71,13 +79,13 @@ export default function DashboardPage() {
         <UpcomingInterviews interviews={mockUpcomingInterviews} />
         <ProgressCard
           title="Skill Progress"
-          description="Track skills relevant to your target roles"
+          description="Close gaps identified by JD analysis"
           skills={mockSkillProgress}
         />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <RecommendedJobs jobs={getPortalJobs().slice(0, 3)} />
+        <RecommendedJobs jobs={topJobs} />
         <RecentActivityFeed activities={mockRecentActivity} />
       </div>
     </div>

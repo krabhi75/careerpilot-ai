@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { PortalBadge } from "@/components/jobs/portal-badge"
 import type { Job } from "@/types"
 
 const typeLabels: Record<Job["type"], string> = {
@@ -47,7 +48,8 @@ export function JobCard({ job }: JobCardProps) {
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
-        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          {job.source && <PortalBadge portal={job.source} />}
           <span className="flex items-center gap-1">
             <MapPin className="size-3.5" />
             {job.location}

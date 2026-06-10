@@ -1,3 +1,5 @@
+import type { JobPortal } from "./platform"
+
 export type JobType = "full_time" | "part_time" | "contract" | "remote"
 export type JobStatus =
   | "saved"
@@ -19,6 +21,8 @@ export type Job = {
   description?: string
   skills?: string[]
   isNewToday?: boolean
+  source?: JobPortal
+  externalUrl?: string
 }
 
 export type Application = {

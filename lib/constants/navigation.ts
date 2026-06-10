@@ -1,4 +1,6 @@
 import {
+  BarChart3,
+  Bell,
   Bot,
   Briefcase,
   Calendar,
@@ -10,37 +12,41 @@ import {
   Settings,
   Users,
 } from "lucide-react"
+import { getTotalAggregatedJobs } from "@/lib/services/job-aggregator"
 import type { NavGroup } from "@/types"
 
-export const JOB_COUNT = 24
+export const JOB_COUNT = getTotalAggregatedJobs()
 
 export const mainNavigation: NavGroup[] = [
   {
-    label: "Overview",
+    label: "Platform",
     items: [
       { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-      { title: "Jobs", href: "/jobs", icon: Briefcase, badge: String(JOB_COUNT) },
+      {
+        title: "Jobs Hub",
+        href: "/jobs",
+        icon: Briefcase,
+        badge: String(JOB_COUNT),
+      },
       { title: "Tracker", href: "/tracker", icon: Kanban },
+      { title: "Analytics", href: "/analytics", icon: BarChart3 },
+      { title: "Job Alerts", href: "/alerts", icon: Bell, badge: "3" },
       { title: "Applications", href: "/applications", icon: FileText, badge: "8" },
     ],
   },
   {
-    label: "Career",
+    label: "Grow",
     items: [
-      { title: "Recruiters", href: "/recruiters", icon: Users },
-      {
-        title: "Learning Material",
-        href: "/learning",
-        icon: GraduationCap,
-      },
+      { title: "Learning Material", href: "/learning", icon: GraduationCap },
       { title: "Interviews", href: "/interviews", icon: Calendar, badge: "3" },
+      { title: "Recruiters", href: "/recruiters", icon: Users },
       { title: "Resources", href: "/resources", icon: Library },
     ],
   },
   {
-    label: "Tools",
+    label: "AI Tools",
     items: [
-      { title: "AI Tools", href: "/ai-tools", icon: Bot },
+      { title: "ATS & JD Tools", href: "/ai-tools", icon: Bot },
       { title: "Settings", href: "/settings", icon: Settings },
     ],
   },
