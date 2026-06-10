@@ -16,6 +16,9 @@ export type Job = {
   salary: string
   postedAt: string
   matchScore?: number
+  description?: string
+  skills?: string[]
+  isNewToday?: boolean
 }
 
 export type Application = {

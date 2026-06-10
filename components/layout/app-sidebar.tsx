@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { Rocket } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { mainNavigation } from "@/lib/constants/navigation"
-import { mockUser } from "@/lib/mock-data"
+import { APP_USER } from "@/lib/constants/user"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
@@ -18,11 +18,7 @@ type AppSidebarProps = {
 
 export function AppSidebar({ onNavigate, className }: AppSidebarProps) {
   const pathname = usePathname()
-  const initials = mockUser.name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
+  const initials = APP_USER.name.slice(0, 2).toUpperCase()
 
   return (
     <aside
@@ -98,9 +94,9 @@ export function AppSidebar({ onNavigate, className }: AppSidebarProps) {
           </AvatarFallback>
         </Avatar>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-medium">{mockUser.name}</p>
+          <p className="truncate text-sm font-medium">{APP_USER.name}</p>
           <p className="truncate text-xs text-sidebar-foreground/60">
-            {mockUser.title}
+            {APP_USER.title}
           </p>
         </div>
       </div>

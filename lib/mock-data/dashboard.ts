@@ -10,15 +10,17 @@ import type {
   UserProfile,
 } from "@/types"
 
+import { APP_USER } from "@/lib/constants/user"
+
 export const mockUser: UserProfile = {
   id: "user-1",
-  name: "Alex Morgan",
-  email: "alex.morgan@email.com",
+  name: APP_USER.fullName,
+  email: APP_USER.email,
   avatarUrl: undefined,
   role: "job_seeker",
-  title: "Senior Product Designer",
-  location: "San Francisco, CA",
-  profileScore: 87,
+  title: APP_USER.title,
+  location: APP_USER.location,
+  profileScore: APP_USER.profileScore,
 }
 
 export const mockKpis: KpiMetric[] = [

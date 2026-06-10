@@ -10,16 +10,16 @@ import { RecommendedJobs } from "@/components/dashboard/recommended-jobs"
 import { UpcomingInterviews } from "@/components/dashboard/upcoming-interviews"
 import { PageHeader } from "@/components/layout/page-header"
 import { Button } from "@/components/ui/button"
+import { APP_USER } from "@/lib/constants/user"
 import {
   mockApplicationStatus,
   mockKpis,
   mockRecentActivity,
   mockRecentApplications,
-  mockRecommendedJobs,
   mockSkillProgress,
   mockUpcomingInterviews,
-  mockUser,
   mockWeeklyActivity,
+  getPortalJobs,
 } from "@/lib/mock-data"
 
 export default function DashboardPage() {
@@ -27,7 +27,7 @@ export default function DashboardPage() {
     <div className="space-y-6">
       <PageHeader
         title="Dashboard"
-        description={`Track your job search progress and career growth, ${mockUser.name.split(" ")[0]}.`}
+        description={`Track your job search progress and career growth, ${APP_USER.name}.`}
       >
         <Button size="sm">
           <Sparkles className="size-4" />
@@ -77,7 +77,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <RecommendedJobs jobs={mockRecommendedJobs} />
+        <RecommendedJobs jobs={getPortalJobs().slice(0, 3)} />
         <RecentActivityFeed activities={mockRecentActivity} />
       </div>
     </div>

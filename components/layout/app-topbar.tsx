@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { UserMenu } from "@/components/layout/user-menu"
-import { mockUser } from "@/lib/mock-data"
+import { APP_USER } from "@/lib/constants/user"
 
 type AppTopbarProps = {
   onMenuClick?: () => void
@@ -35,7 +35,7 @@ export function AppTopbar({ onMenuClick }: AppTopbarProps) {
       <div className="hidden min-w-0 sm:block">
         <p className="text-sm font-medium">{currentPage?.title ?? "Dashboard"}</p>
         <p className="text-xs text-muted-foreground">
-          Welcome back, {mockUser.name.split(" ")[0]}
+          Welcome back, {APP_USER.name}
         </p>
       </div>
 

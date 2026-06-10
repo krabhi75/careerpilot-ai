@@ -4,6 +4,7 @@ import {
   Calendar,
   FileText,
   GraduationCap,
+  Kanban,
   LayoutDashboard,
   Library,
   Settings,
@@ -11,12 +12,15 @@ import {
 } from "lucide-react"
 import type { NavGroup } from "@/types"
 
+export const JOB_COUNT = 24
+
 export const mainNavigation: NavGroup[] = [
   {
     label: "Overview",
     items: [
       { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-      { title: "Jobs", href: "/jobs", icon: Briefcase, badge: "24" },
+      { title: "Jobs", href: "/jobs", icon: Briefcase, badge: String(JOB_COUNT) },
+      { title: "Tracker", href: "/tracker", icon: Kanban },
       { title: "Applications", href: "/applications", icon: FileText, badge: "8" },
     ],
   },
@@ -24,7 +28,11 @@ export const mainNavigation: NavGroup[] = [
     label: "Career",
     items: [
       { title: "Recruiters", href: "/recruiters", icon: Users },
-      { title: "Learning", href: "/learning", icon: GraduationCap },
+      {
+        title: "Learning Material",
+        href: "/learning",
+        icon: GraduationCap,
+      },
       { title: "Interviews", href: "/interviews", icon: Calendar, badge: "3" },
       { title: "Resources", href: "/resources", icon: Library },
     ],
