@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://careerpilot-ai-five.vercel.app"),
   title: {
     default: "CareerPilot AI",
     template: "%s | CareerPilot AI",

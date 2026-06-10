@@ -28,8 +28,23 @@ export default function SettingsPage() {
             <span>{APP_USER.title}</span>
           </div>
           <div className="flex justify-between">
+            <span className="text-muted-foreground">Deploy branch</span>
+            <Badge variant="outline">main</Badge>
+          </div>
+          <div className="flex justify-between gap-4">
+            <span className="text-muted-foreground shrink-0">Production URL</span>
+            <a
+              href="https://careerpilot-ai-five.vercel.app"
+              className="truncate text-primary hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              careerpilot-ai-five.vercel.app
+            </a>
+          </div>
+          <div className="flex justify-between">
             <span className="text-muted-foreground">Chrome Extension</span>
-            <Badge variant="outline">Install from /chrome-extension</Badge>
+            <Badge variant="outline">chrome-extension folder</Badge>
           </div>
         </div>
       </InfoCard>
