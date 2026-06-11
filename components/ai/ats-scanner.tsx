@@ -10,15 +10,15 @@ import { Badge } from "@/components/ui/badge"
 import { InfoCard } from "@/components/cards"
 import type { ATSResult } from "@/types"
 
-const SAMPLE_RESUME = `Abhishek Kumar — Software Engineer
+const SAMPLE_RESUME = `Abhishek Kumar — Product Manager
 
-Skills: React, TypeScript, Node.js, Python, AWS, PostgreSQL, Docker, Git
+Skills: Product Strategy, Roadmapping, PRDs, User Research, SQL, A/B Testing, Agile, OKRs, Stakeholder Management
 
 Experience:
-- Built full-stack web apps serving 50K+ users using React and Node.js
-- Reduced API latency by 40% through query optimization and Redis caching
-- Led migration to AWS with CI/CD pipelines using GitHub Actions
-- Mentored 3 junior developers on code quality and Agile practices`
+- Owned checkout funnel product roadmap, increasing conversion by 22% across 2M monthly users
+- Led cross-functional team of 12 (eng, design, data) to launch B2B payments feature in 3 months
+- Defined OKRs and ran quarterly planning for SaaS growth vertical
+- Conducted 40+ user interviews and shipped 8 experiments with measurable GTM impact`
 
 export function ATSScanner() {
   const [text, setText] = useState("")

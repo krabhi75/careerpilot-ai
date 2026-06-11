@@ -1,21 +1,21 @@
 import type { ATSResult } from "@/types"
 
 const TARGET_KEYWORDS = [
-  "react",
-  "typescript",
-  "node.js",
-  "python",
-  "aws",
-  "system design",
+  "product management",
+  "roadmap",
+  "prd",
+  "user research",
+  "stakeholder",
   "agile",
-  "ci/cd",
-  "postgresql",
-  "kubernetes",
-  "microservices",
-  "rest api",
-  "git",
-  "docker",
+  "okrs",
+  "metrics",
+  "a/b testing",
+  "sql",
+  "analytics",
+  "go-to-market",
+  "gtm",
   "leadership",
+  "cross-functional",
 ]
 
 export function analyzeResume(text: string): ATSResult {

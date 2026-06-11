@@ -42,7 +42,7 @@ export function AppTopbar({ onMenuClick }: AppTopbarProps) {
       <div className="relative ml-auto flex max-w-md flex-1 items-center">
         <Search className="absolute left-2.5 size-4 text-muted-foreground" />
         <Input
-          placeholder="Search jobs, companies, resources..."
+          placeholder="Search PM roles, companies, resources..."
           className="h-9 bg-muted/40 pl-9"
         />
       </div>

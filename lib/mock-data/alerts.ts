@@ -4,7 +4,7 @@ export const mockJobAlerts: JobAlert[] = [
   {
     id: "alert-1",
     title: "New match on LinkedIn",
-    message: "Senior Software Engineer at Google — 94% profile match",
+    message: "Senior Product Manager at Google — 96% profile match",
     portal: "linkedin",
     timestamp: "10 min ago",
     type: "new_job",
@@ -13,7 +13,7 @@ export const mockJobAlerts: JobAlert[] = [
   {
     id: "alert-2",
     title: "Application viewed",
-    message: "Microsoft recruiter viewed your Full Stack Developer application",
+    message: "Microsoft recruiter viewed your Product Manager application",
     portal: "naukri",
     timestamp: "1 hour ago",
     type: "status_update",
@@ -21,8 +21,8 @@ export const mockJobAlerts: JobAlert[] = [
   },
   {
     id: "alert-3",
-    title: "3 new jobs on Indeed",
-    message: "Backend roles in Bangalore matching your skills",
+    title: "5 new PM roles on Indeed",
+    message: "Product Manager roles in Bangalore matching your profile",
     portal: "indeed",
     timestamp: "2 hours ago",
     type: "new_job",
@@ -31,7 +31,7 @@ export const mockJobAlerts: JobAlert[] = [
   {
     id: "alert-4",
     title: "Interview reminder",
-    message: "Uber Golang Developer — technical round tomorrow at 2 PM",
+    message: "Meesho Senior PM — case study round tomorrow at 2 PM",
     portal: "instahyre",
     timestamp: "3 hours ago",
     type: "deadline",
@@ -40,7 +40,7 @@ export const mockJobAlerts: JobAlert[] = [
   {
     id: "alert-5",
     title: "High match on Cutshort",
-    message: "Tech Lead at Meesho — 93% match, apply before deadline",
+    message: "Group PM at Razorpay — 94% match, apply before deadline",
     portal: "cutshort",
     timestamp: "5 hours ago",
     type: "match",
@@ -49,7 +49,7 @@ export const mockJobAlerts: JobAlert[] = [
   {
     id: "alert-6",
     title: "Glassdoor salary insight",
-    message: "Razorpay Backend Engineer avg salary: ₹32L (above your target)",
+    message: "Senior PM at Google avg salary: ₹50L (above your target)",
     portal: "glassdoor",
     timestamp: "Yesterday",
     type: "match",
@@ -58,7 +58,7 @@ export const mockJobAlerts: JobAlert[] = [
   {
     id: "alert-7",
     title: "Wellfound startup roles",
-    message: "5 Series-A startups hiring React developers remotely",
+    message: "5 Series-A startups hiring Product Managers remotely",
     portal: "wellfound",
     timestamp: "Yesterday",
     type: "new_job",

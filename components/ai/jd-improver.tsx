@@ -10,14 +10,14 @@ import { Badge } from "@/components/ui/badge"
 import { InfoCard } from "@/components/cards"
 import type { JDAnalysis } from "@/types"
 
-const SAMPLE_JD = `We are looking for a Senior Software Engineer with 4+ years of experience.
+const SAMPLE_JD = `We are looking for a Senior Product Manager with 5+ years of experience.
 
 Requirements:
-- Strong proficiency in React, TypeScript, and Node.js
-- Experience with AWS, Docker, and CI/CD pipelines
-- Knowledge of PostgreSQL and microservices architecture
-- System design and leadership skills
-- Agile development experience`
+- Proven track record shipping B2B or consumer products end-to-end
+- Strong skills in roadmapping, PRDs, and stakeholder management
+- Experience with user research, A/B testing, and data-driven decisions
+- SQL and analytics tools (Mixpanel, Amplitude, or similar)
+- Agile/Scrum experience and cross-functional leadership`
 
 export function JDImprover() {
   const [jd, setJd] = useState("")

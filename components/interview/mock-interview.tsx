@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 export function MockInterview() {
-  const [role, setRole] = useState("Software Engineer")
+  const [role, setRole] = useState("Product Manager")
   const [company, setCompany] = useState("")
   const [questions, setQuestions] = useState<InterviewQuestion[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
